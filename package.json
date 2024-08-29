@@ -1,0 +1,22 @@
+{
+    "name": "51-grupe-todo",
+    "version": "1.0.0",
+    "description": "Užduočių valdymo APP, kur įvesti duomenys yra saugomi localStorage",
+    "main": "index.js",
+    "scripts": {
+        "dev": "dead-server --host=localhost --port=5109",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "HTML",
+        "DOM",
+        "CSS",
+        "JS",
+        "localStorage"
+    ],
+    "author": "Rimantas (https://github.com/belauzas)",
+    "license": "MIT",
+    "devDependencies": {
+        "dead-server": "^1.0.9"
+    }
+}
