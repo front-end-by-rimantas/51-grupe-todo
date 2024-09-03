@@ -1,0 +1,44 @@
+.main-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0.2rem 0.4rem #0003;
+}
+.main-header > .logo {
+  height: 3rem;
+}
+.main-header > .stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.main-header .detail {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+.main-header .label {
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.main-header .value {
+  font-family: Playwrite, cursive;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+@media (min-width: 36rem) {
+  .main-header .label {
+    display: block;
+  }
+}
