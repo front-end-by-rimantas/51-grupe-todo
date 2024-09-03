@@ -1,0 +1,78 @@
+.lightbox {
+  position: fixed;
+  inset: 0;
+}
+.lightbox[data-visible='false'] {
+  display: none;
+}
+.lightbox > .background {
+  width: 100%;
+  height: 100%;
+  background-color: #0005;
+}
+
+.form-create {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 30rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0.4rem 0.8rem #0005;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.form-create .form-row {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.2rem;
+  border: none;
+}
+.form-create .columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.form-create .label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+.form-create .input {
+  width: 100%;
+  line-height: 1rem;
+  padding: 0.5rem;
+}
+.form-create .input[type='color'] {
+  padding: 0;
+  height: 2.3rem;
+  border: none;
+}
+input[type='color' i]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.form-create .btn {
+  padding: 0.5rem 1rem;
+  line-height: 1rem;
+  font-size: 1rem;
+}
+.form-create .btn:hover {
+}
+
+.form-create .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  line-height: 2.7rem;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 0.4rem 0.8rem #0005;
+}

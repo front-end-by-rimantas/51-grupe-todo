@@ -44,9 +44,30 @@
     </header>
 
     <main>
-        <section>
-            TASK FORM CONTENT
-        </section>
+        <div class="lightbox" data-visible="true">
+            <div class="background"></div>
+            <form class="form-create">
+                <fieldset class="form-row">
+                    <label class="label" for="task">Task</label>
+                    <input class="input" id="task" type="text" required>
+                </fieldset>
+                <div class="columns">
+                    <fieldset class="form-row">
+                        <label class="label" for="deadline">Deadline</label>
+                        <input class="input" id="deadline" type="date" value="2024-09-03" min="2024-09-03" max="2025-09-03" required>
+                    </fieldset>
+                    <fieldset class="form-row">
+                        <label class="label" for="color">Color</label>
+                        <input class="input" id="color" type="color" required>
+                    </fieldset>
+                </div>
+                <fieldset class="form-row columns">
+                    <button class="btn" type="reset">Reset</button>
+                    <button class="btn" type="submit">Create</button>
+                </fieldset>
+                <div class="close">x</div>
+            </form>
+        </div>
         <section>
             TASK LIST CONTENT
         </section>
