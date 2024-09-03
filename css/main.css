@@ -1,5 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap'); */
 @import '../css/components/header.css';
+@import '../css/components/footer.css';
 
 @font-face {
   font-family: 'Playwrite';
@@ -38,4 +39,8 @@ body {
   font-family: Playwrite, cursive;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+main {
+  min-height: calc(100vh - 9rem);
 }
