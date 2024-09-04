@@ -59,6 +59,7 @@
   position: absolute;
   top: 1.5rem;
   right: 0;
+  z-index: 1;
   padding: 0.5em 0;
   background-color: #eee;
   box-shadow: 0 0.2rem 0.5rem #0005;
