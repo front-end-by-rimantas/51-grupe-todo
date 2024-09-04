@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: auto;
 }
 .main-header .detail {
   display: flex;
@@ -35,8 +36,20 @@
   font-weight: normal;
   font-size: 1rem;
 }
+.main-header .btn > .icon + .text {
+  display: none;
+}
 
-@media (min-width: 36rem) {
+@media (min-width: 28rem) {
+  .main-header .btn > .icon + .text {
+    display: inline;
+  }
+}
+
+@media (min-width: 48rem) {
+  .main-header {
+    gap: 3rem;
+  }
   .main-header .label {
     display: block;
   }

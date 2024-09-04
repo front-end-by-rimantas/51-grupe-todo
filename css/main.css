@@ -3,6 +3,7 @@
 @import '../css/components/footer.css';
 @import '../css/components/form-create.css';
 @import '../css/components/list.css';
+@import '../css/components/button.css';
 
 @font-face {
   font-family: 'Playwrite';
