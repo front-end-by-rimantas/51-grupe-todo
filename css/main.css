@@ -2,6 +2,7 @@
 @import '../css/components/header.css';
 @import '../css/components/footer.css';
 @import '../css/components/form-create.css';
+@import '../css/components/list.css';
 
 @font-face {
   font-family: 'Playwrite';
