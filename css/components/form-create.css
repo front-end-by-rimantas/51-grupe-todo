@@ -1,6 +1,7 @@
 .lightbox {
   position: fixed;
   inset: 0;
+  z-index: 10;
 }
 .lightbox[data-visible='false'] {
   display: none;
