@@ -24,6 +24,8 @@ window.addEventListener('keyup', e => {
 
 // task menu
 const allTaskDOMs = document.querySelectorAll('.task');
+const taskMenuBackgroundDOM = document.querySelector('.task-menu-background');
+let lastOpenMenuActionsDOM = null;
 
 for (const taskDOM of allTaskDOMs) {
     const moreDOM = taskDOM.querySelector('.more');
@@ -31,15 +33,21 @@ for (const taskDOM of allTaskDOMs) {
 
     if (moreDOM) {
         moreDOM.addEventListener('click', () => {
+            if (lastOpenMenuActionsDOM) {
+                lastOpenMenuActionsDOM.dataset.visible = 'false';
+            }
+
             moreActionsDOM.dataset.visible = 'true';
+            taskMenuBackgroundDOM.classList.add('active');
+            lastOpenMenuActionsDOM = moreActionsDOM;
         });
     }
 }
 
-document.body.addEventListener('click', () => {
-    console.log('window click...');
+// document.body.addEventListener('click', () => {
+//     console.log('window click...');
 
-    for (const taskDOM of allTaskDOMs) {
-        taskDOM.querySelector('.more-actions').dataset.visible = 'false';
-    }
-});
+//     for (const taskDOM of allTaskDOMs) {
+//         taskDOM.querySelector('.more-actions').dataset.visible = 'false';
+//     }
+// });
