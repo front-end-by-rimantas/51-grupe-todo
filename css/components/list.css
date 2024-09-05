@@ -50,7 +50,7 @@
   border-radius: 0.3rem;
   cursor: pointer;
   user-select: none;
-  z-index: 14;
+  z-index: 3;
 }
 .task > .header > .more:hover {
   background-color: #ccc;
@@ -61,7 +61,7 @@
   position: absolute;
   top: 1.5rem;
   right: 0;
-  z-index: 15;
+  z-index: 4;
   padding: 0.5em 0;
   background-color: #eee;
   box-shadow: 0 0.2rem 0.5rem #0005;
@@ -89,9 +89,9 @@
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 10;
-  /* background-color: #0003; */
-  background-color: transparent;
+  z-index: 2;
+  background-color: #f003;
+  /* background-color: transparent; */
 }
 .task-menu-background.active {
   display: block;

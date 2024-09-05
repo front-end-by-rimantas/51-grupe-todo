@@ -1,53 +1,55 @@
-// lightbox
 const newTaskBtnDOM = document.querySelector('.main-header .btn');
 const lightboxDOM = document.querySelector('.lightbox');
 const lightboxCloseDOM = lightboxDOM.querySelector('.close');
 const lightboxBackgroundDOM = lightboxDOM.querySelector('.background');
-
-newTaskBtnDOM.addEventListener('click', () => {
-    lightboxDOM.dataset.visible = 'true';
-});
-
-lightboxCloseDOM.addEventListener('click', () => {
-    lightboxDOM.dataset.visible = 'false';
-});
-
-lightboxBackgroundDOM.addEventListener('click', () => {
-    lightboxDOM.dataset.visible = 'false';
-});
-
-window.addEventListener('keyup', e => {
-    if (e.key === 'Escape') {
-        lightboxDOM.dataset.visible = 'false';
-    }
-});
-
-// task menu
 const allTaskDOMs = document.querySelectorAll('.task');
 const taskMenuBackgroundDOM = document.querySelector('.task-menu-background');
-let lastOpenMenuActionsDOM = null;
+let lastOpenMenuTaskIndex = -1;
 
-for (const taskDOM of allTaskDOMs) {
+function openLightbox() {
+    lightboxDOM.dataset.visible = 'true';
+}
+
+function closeLightbox() {
+    lightboxDOM.dataset.visible = 'false';
+}
+
+function closeTaskMenu() {
+    if (lastOpenMenuTaskIndex >= 0) {
+        allTaskDOMs[lastOpenMenuTaskIndex].querySelector('.more-actions').dataset.visible = 'false';
+    }
+    taskMenuBackgroundDOM.classList.remove('active');
+}
+
+for (let i = 0; i < allTaskDOMs.length; i++) {
+    const taskDOM = allTaskDOMs[i];
     const moreDOM = taskDOM.querySelector('.more');
     const moreActionsDOM = taskDOM.querySelector('.more-actions');
 
-    if (moreDOM) {
-        moreDOM.addEventListener('click', () => {
-            if (lastOpenMenuActionsDOM) {
-                lastOpenMenuActionsDOM.dataset.visible = 'false';
-            }
+    moreDOM.addEventListener('click', () => {
+        if (lastOpenMenuTaskIndex === i) {
+            moreActionsDOM.dataset.visible = 'false';
+            taskMenuBackgroundDOM.classList.remove('active');
+            lastOpenMenuTaskIndex = -1;
+        } else {
+            closeTaskMenu();
 
             moreActionsDOM.dataset.visible = 'true';
             taskMenuBackgroundDOM.classList.add('active');
-            lastOpenMenuActionsDOM = moreActionsDOM;
-        });
-    }
+            lastOpenMenuTaskIndex = i;
+        }
+    });
 }
 
-// document.body.addEventListener('click', () => {
-//     console.log('window click...');
+newTaskBtnDOM.addEventListener('click', openLightbox);
+newTaskBtnDOM.addEventListener('click', closeTaskMenu);
+lightboxCloseDOM.addEventListener('click', closeLightbox);
+lightboxBackgroundDOM.addEventListener('click', closeLightbox);
+taskMenuBackgroundDOM.addEventListener('click', closeTaskMenu);
 
-//     for (const taskDOM of allTaskDOMs) {
-//         taskDOM.querySelector('.more-actions').dataset.visible = 'false';
-//     }
-// });
+window.addEventListener('keyup', e => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeTaskMenu();
+    }
+});
